@@ -1,21 +1,29 @@
 package com.tecsup.petclinic.service;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.tecsup.petclinic.domain.Owner;
+import com.tecsup.petclinic.exception.OwnerNotFoundException;
 
 @SpringBootTest
 public class OwnerServiceTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(OwnerServiceTest.class);
 
-	//@Autowired
-   //	private OwnerService ownerService;
+	@Autowired
+   private OwnerService ownerService;
 
 	/**
 	 * 
 	 */
-	/*
+	
 	@Test
 	public void testFindOwnerById() {
 
@@ -27,13 +35,13 @@ public class OwnerServiceTest {
 			
 			owner = ownerService.findById(ID);
 			
-		} catch (OwnertNotFoundException e) {
-			fail(e.getMessage());
+		} catch (OwnerNotFoundException e) {
+			assertThat(e.getMessage(),false);
 		}
 		logger.info("" + owner);
 
-		assertEquals(NAME, owner.getName());
+		assertThat(NAME, is(owner.getFirst_name()));
 
 	}
-	*/
+	
 }
