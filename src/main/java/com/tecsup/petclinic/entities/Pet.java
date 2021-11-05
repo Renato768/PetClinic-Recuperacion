@@ -8,8 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 
@@ -22,43 +23,37 @@ public class Pet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
 	private String name;
-	
 	@Column(name = "type_id")
 	private int typeId;
-
 	@Column(name = "owner_id")
 	private int ownerId;
-
-	@JsonFormat(pattern="yyyy-MM-dd")
+	
 	@Column(name = "birth_date")
+	
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd",  timezone = "GMT+8")
 	private Date birthDate;
-
+	
 	public Pet() {
 	}
 
-	public Pet(long id, String name, int type_id, int owner_id) {
+	public Pet(long id, String name, int type_id, int owner_id, Date birth_date) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.typeId = type_id;
 		this.ownerId = owner_id;
+		this.birthDate = birth_date;
 	}
 
-	public Pet(String name, int type_id, int owner_id) {
+	public Pet(String name, int type_id, int owner_id, Date birth_date) {
 		super();
 		this.name = name;
 		this.typeId = type_id;
 		this.ownerId = owner_id;
-	}
+		this.birthDate = birth_date;
 
-	public Pet(String name, int typeId, int ownerId, Date birthDate) {
-		super();
-		this.name = name;
-		this.typeId = typeId;
-		this.ownerId = ownerId;
-		this.birthDate = birthDate;
 	}
 
 	public long getId() {
@@ -93,6 +88,12 @@ public class Pet {
 		this.ownerId = owner_id;
 	}
 
+	@Override
+	public String toString() {
+		return "Pet [id=" + id + ", name=" + name + ", typeId=" + typeId + ", ownerId=" + ownerId + ", birthDate="
+				+ birthDate + "]";
+	}
+
 	public Date getBirthDate() {
 		return birthDate;
 	}
@@ -101,10 +102,5 @@ public class Pet {
 		this.birthDate = birthDate;
 	}
 
-	@Override
-	public String toString() {
-		return "Pet [id=" + id + ", name=" + name + ", typeId=" + typeId + ", ownerId=" + ownerId + ", birth_date="
-				+ birthDate + "]";
-	}
 
 }

@@ -1,4 +1,4 @@
-package com.tecsup.petclinic.entities;
+package com.tecsup.petclinic.dto;
 
 import java.util.Date;
 
