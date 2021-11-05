@@ -37,17 +37,38 @@ public interface OwnerService {
 	
 	/**
 	 * 
-	 * @param first_name
+	 * @param firstName
 	 * @return
 	 */
-	List<Owner> findByfirst_name(String first_name);
-	
+	List<Owner> findByFirstName(String firstname);
+
+	/**
+	 * 
+	 * @param lastName
+	 * @return
+	 */
+	List<Owner> findByLastName(String lastname);
+
 	/**
 	 * 
 	 * @param address
 	 * @return
 	 */
 	List<Owner> findByAddress(String address);
+	
+	/**
+	 * 
+	 * @param city
+	 * @return
+	 */
+	List<Owner> findByCity(String city);
+	
+	/**
+	 * 
+	 * @param telephone
+	 * @return
+	 */
+	List<Owner> findByTelephone(String telephone);
 	/**
 	 * 
 	 * @return

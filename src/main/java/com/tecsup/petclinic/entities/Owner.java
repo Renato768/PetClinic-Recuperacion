@@ -15,7 +15,7 @@ public class Owner {
 	private String firstName;
 	
 	@Column(name = "last_name")
-	private String last_name;
+	private String lastname;
 	
 	@Column(name = "address")
 	private String address;
@@ -24,16 +24,16 @@ public class Owner {
 	private String city;
 	
 	@Column(name = "telephone")
-	private int telephone;
+	private String telephone;
 	
 	public Owner() {
 	}
 
-	public Owner(long id, String first_name, String last_name, String address, String city, int telephone) {
+	public Owner(long id, String firstname, String lastname, String address, String city, String telephone) {
 		super();
 		this.id = id;
-		this.firstName = first_name;
-		this.last_name = last_name;
+		this.firstName = firstname;
+		this.lastname = lastname;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
@@ -42,13 +42,13 @@ public class Owner {
 
 	public Owner(String last_name) {
 		super();
-		this.last_name = last_name;
+		this.lastname = last_name;
 	}
 
-	public Owner(String first_name, String last_name, String address, String city, int telephone) {
+	public Owner(String firstname, String lastname, String address, String city, String telephone) {
 		super();
-		this.firstName = first_name;
-		this.last_name = last_name;
+		this.firstName = firstname;
+		this.lastname = lastname;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
@@ -71,12 +71,12 @@ public class Owner {
 		this.firstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getAddress() {
@@ -95,11 +95,11 @@ public class Owner {
 		this.city = city;
 	}
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 	

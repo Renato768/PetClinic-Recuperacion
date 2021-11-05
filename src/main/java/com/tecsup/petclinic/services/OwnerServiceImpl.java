@@ -66,12 +66,22 @@ public class OwnerServiceImpl implements OwnerService{
 	 * @return
 	 */
 	@Override
-	public List<Owner> findByfirst_name(String first_name) {
-		List<Owner> owns = ownerRepository.findByfirstName(first_name);
+	public List<Owner> findByFirstName(String firstname) {
+		List<Owner> owns = ownerRepository.findByFirstName(firstname);
 
 		owns.stream().forEach(own -> logger.info("" + own));
 
 		return owns;
+	}
+	
+	
+	@Override
+	public List<Owner> findByLastName(String lastname) {
+		List<Owner> owners = ownerRepository.findByLastName(lastname);
+
+		owners.stream().forEach(owner -> logger.info("" + owner));
+
+		return owners;
 	}
 	/**
 	 * 
@@ -94,6 +104,24 @@ public class OwnerServiceImpl implements OwnerService{
 	public Iterable<Owner> findAll() {
 		// TODO Auto-generated method stub
 		return ownerRepository.findAll();
+	}
+	
+	@Override
+	public List<Owner> findByCity(String city) {
+		List<Owner> owners = ownerRepository.findByCity(city);
+
+		owners.stream().forEach(owner -> logger.info("" + owner));
+
+		return owners;
+	}
+	
+	@Override
+	public List<Owner> findByTelephone(String telephone) {
+		List<Owner> owners = ownerRepository.findByTelephone(telephone);
+
+		owners.stream().forEach(owner -> logger.info("" + owner));
+
+		return owners;
 	}
 
 }
