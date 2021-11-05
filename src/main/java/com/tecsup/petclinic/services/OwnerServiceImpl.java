@@ -1,18 +1,21 @@
-package com.tecsup.petclinic.service;
+package com.tecsup.petclinic.services;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.tecsup.petclinic.domain.Owner;
-import com.tecsup.petclinic.domain.OwnerRepository;
+import com.tecsup.petclinic.entities.Owner;
 import com.tecsup.petclinic.exception.OwnerNotFoundException;
+import com.tecsup.petclinic.repositories.OwnerRepository;
 
+@Service
 public class OwnerServiceImpl implements OwnerService{
-	private static final Logger logger = LoggerFactory.getLogger(PetServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(OwnerServiceImpl.class);
 
 	@Autowired
 	OwnerRepository ownerRepository;
@@ -57,16 +60,24 @@ public class OwnerServiceImpl implements OwnerService{
 			throw new OwnerNotFoundException("Record no found...");
 		return own.get();
 	}
-
+	/**
+	 * 
+	 * @param first_name
+	 * @return
+	 */
 	@Override
-	public List<Owner> findByName(String name) {
-		List<Owner> owns = ownerRepository.findByName(name);
+	public List<Owner> findByfirst_name(String first_name) {
+		List<Owner> owns = ownerRepository.findByfirstName(first_name);
 
 		owns.stream().forEach(own -> logger.info("" + own));
 
 		return owns;
 	}
-
+	/**
+	 * 
+	 * @param address
+	 * @return
+	 */
 	@Override
 	public List<Owner> findByAddress(String address) {
 		List<Owner> owns = ownerRepository.findByAddress(address);
@@ -75,7 +86,10 @@ public class OwnerServiceImpl implements OwnerService{
 
 		return owns;
 	}
-
+	/**
+	 * 
+	 * @return
+	 */
 	@Override
 	public Iterable<Owner> findAll() {
 		// TODO Auto-generated method stub

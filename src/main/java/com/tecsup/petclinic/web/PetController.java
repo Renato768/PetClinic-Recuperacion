@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-//import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.tecsup.petclinic.domain.Pet;
-import com.tecsup.petclinic.domain.PetDTO;
+import com.tecsup.petclinic.entities.Pet;
+import com.tecsup.petclinic.entities.PetDTO;
 import com.tecsup.petclinic.exception.PetNotFoundException;
-import com.tecsup.petclinic.service.PetService;
+import com.tecsup.petclinic.services.PetService;
 
 /**
  * 

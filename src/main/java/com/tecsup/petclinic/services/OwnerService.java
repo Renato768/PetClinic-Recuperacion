@@ -1,22 +1,22 @@
-package com.tecsup.petclinic.service;
+package com.tecsup.petclinic.services;
 
 import java.util.List;
 
-import com.tecsup.petclinic.domain.Owner;
+import com.tecsup.petclinic.entities.Owner;
 import com.tecsup.petclinic.exception.OwnerNotFoundException;
 import com.tecsup.petclinic.exception.PetNotFoundException;
 
 public interface OwnerService {
 	/**
 	 * 
-	 * @param pet
+	 * @param owner
 	 * @return
 	 */
 	Owner create(Owner owner);
 	
 	/**
 	 * 
-	 * @param pet
+	 * @param owner
 	 * @return
 	 */
 	Owner update(Owner owner);
@@ -24,7 +24,7 @@ public interface OwnerService {
 	/**
 	 * 
 	 * @param id
-	 * @throws PetNotFoundException
+	 * @throws OwnerNotFoundException
 	 */
 	void delete(Long id) throws OwnerNotFoundException;
 	
@@ -37,14 +37,14 @@ public interface OwnerService {
 	
 	/**
 	 * 
-	 * @param name
+	 * @param first_name
 	 * @return
 	 */
-	List<Owner> findByName(String name);
+	List<Owner> findByfirst_name(String first_name);
 	
 	/**
 	 * 
-	 * @param typeId
+	 * @param address
 	 * @return
 	 */
 	List<Owner> findByAddress(String address);
