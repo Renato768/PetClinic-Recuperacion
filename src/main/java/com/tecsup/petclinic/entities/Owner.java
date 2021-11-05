@@ -32,8 +32,8 @@ public class Owner {
 	public Owner(long id, String firstName, String lastName, String address, String city, String telephone) {
 		super();
 		this.id = id;
-		this.firstName = firstname;
-		this.lastname = lastname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
