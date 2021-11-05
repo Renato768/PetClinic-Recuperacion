@@ -40,14 +40,14 @@ public interface OwnerService {
 	 * @param firstName
 	 * @return
 	 */
-	List<Owner> findByFirstName(String firstname);
+	List<Owner> findByFirstName(String firstName);
 
 	/**
 	 * 
 	 * @param lastName
 	 * @return
 	 */
-	List<Owner> findByLastName(String lastname);
+	List<Owner> findByLastName(String lastName);
 
 	/**
 	 * 

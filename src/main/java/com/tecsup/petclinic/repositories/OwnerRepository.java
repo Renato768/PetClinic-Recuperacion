@@ -10,10 +10,10 @@ import com.tecsup.petclinic.entities.Owner;
 @Repository
 public interface OwnerRepository extends CrudRepository<Owner, Long>{
 		// Fetch pets by first_name
-	List<Owner> findByFirstName(String firstname);
+	List<Owner> findByFirstName(String firstName);
 
 	
-	List<Owner> findByLastName(String lastname);
+	List<Owner> findByLastName(String lastName);
 
 	
 	List<Owner> findByAddress(String address);

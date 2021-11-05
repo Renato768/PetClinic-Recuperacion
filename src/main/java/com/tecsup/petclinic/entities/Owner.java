@@ -15,7 +15,7 @@ public class Owner {
 	private String firstName;
 	
 	@Column(name = "last_name")
-	private String lastname;
+	private String lastName;
 	
 	@Column(name = "address")
 	private String address;
@@ -29,26 +29,26 @@ public class Owner {
 	public Owner() {
 	}
 
-	public Owner(long id, String firstname, String lastname, String address, String city, String telephone) {
+	public Owner(long id, String firstName, String lastName, String address, String city, String telephone) {
 		super();
 		this.id = id;
-		this.firstName = firstname;
-		this.lastname = lastname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
 	}
 	
 
-	public Owner(String last_name) {
+	public Owner(String lastname) {
 		super();
-		this.lastname = last_name;
+		this.lastName = lastname;
 	}
 
-	public Owner(String firstname, String lastname, String address, String city, String telephone) {
+	public Owner(String firstName, String lastName, String address, String city, String telephone) {
 		super();
-		this.firstName = firstname;
-		this.lastname = lastname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
@@ -72,11 +72,11 @@ public class Owner {
 	}
 
 	public String getLastname() {
-		return lastname;
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastname(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getAddress() {
